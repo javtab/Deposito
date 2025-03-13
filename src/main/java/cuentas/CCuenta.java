@@ -1,5 +1,9 @@
 package cuentas;
 
+/**
+ * esta clase representa a una cuenta
+ * @author javta
+ */
 public class CCuenta {
 
 
@@ -8,9 +12,10 @@ public class CCuenta {
     private double saldo;
     private double tipoInterés;
 
-    public CCuenta()
-    {
-    }
+    /**
+     *  este es el método constructor
+     *
+     */
 
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
@@ -19,11 +24,20 @@ public class CCuenta {
         setSaldo(sal);
     }
 
+    /**
+     * Devuelve el saldo de la cuenta
+     * @return saldo
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+     *  este método ingresa una cantidad en la cuenta
+     * @param cantidad dinero a ingresar
+     * @throws Exception si la cantidad es negativa
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -31,6 +45,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * este método es pata retirar dinero
+     * @param cantidad dinero a retirar
+     * @throws Exception si la cantidad es negativa o superior al dinero existente
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
